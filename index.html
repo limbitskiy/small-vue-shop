@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Small shop</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+		rel="stylesheet">
+	<script src="https://kit.fontawesome.com/e6d3ac7456.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<div id="app">
+
+		<popup-cart :cart="cart" @to-shipping="toShipping"></popup-cart>
+
+		<navbar :cart="cart" @to-main="toMain"></navbar>
+
+		<shipping v-if="showShipping"></shipping>
+
+		<main v-if="showMain" class="main-content">
+
+			<jumbotron></jumbotron>
+
+			<products class="grey-bg" :products="products" @add-to-cart="updateCart">
+			</products>
+
+			<about></about>
+
+			<why-us></why-us>
+
+		</main>
+
+		<footer-component></footer-component>
+
+		<div class="copyright">
+			<div class="container">
+				<span>©2021 Химпоставщик</span>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/vue@next"></script>
+	<script src="app.js"></script>
+	<script src="/components/Navbar.js"></script>
+	<script src="/components/Jumbotron.js"></script>
+	<script src="/components/Products.js"></script>
+	<script src="/components/About.js"></script>
+	<script src="/components/WhyUs.js"></script>
+	<script src="/components/Footer.js"></script>
+	<script src="/components/Shipping.js"></script>
+	<script src="/components/PopupCart.js"></script>
+	<script src="/components/Shipping.js"></script>
+</body>
+
+<script>
+	const mountedApp = app.mount('#app')
+</script>
+
+</html>
