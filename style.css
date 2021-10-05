@@ -30,7 +30,7 @@ body {
 }
 
 button {
-	padding: 12px 30px;
+	padding: .8em 2.5em;
 	background-color: var(--green-color);
 	border: none;
 	border-radius: 3px;
@@ -74,7 +74,7 @@ section {
 	padding-top: 160px;
 }
 
-.subtitle {
+.subtitle, .modal-title {
 	font-family: 'Ubuntu', sans-serif;
 	text-align: center;
 	margin-bottom: 1.2em;
@@ -84,11 +84,26 @@ section {
 }
 
 .modal-window {
-	max-width: 900px;
+	max-width: 600px;
 	margin: auto;
     background-color: #FFF;
     padding: 50px;
     border-radius: 5px;
+}
+
+.modal-title {
+	margin-bottom: .5em;
+}
+
+.modal-window>p {
+	text-align: center;
+	margin: 1em 2em;
+	line-height: 1.4em;
+	color: var(--grey-text);
+}
+
+.asterisk {
+	color: red;
 }
 
 /* popup cart */
@@ -427,10 +442,8 @@ section {
 /* delivery form */
 
 .delivery-form {
-	display: grid;
-	grid-auto-flow: column;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr;
+	display: flex;
+	flex-direction: column;
 }
 
 .form-input-group>label {
@@ -442,7 +455,6 @@ section {
 	background-color: rgb(224, 224, 224);
 	border: none;
 	border-radius: 3px;
-	margin-right: 25px;
 	padding-left: 10px;
 }
 
@@ -451,9 +463,9 @@ section {
 	outline: none;
 }
 
-.form-checkbox-group>input {
+/* .form-checkbox-group>input {
 	margin-right: 5px;
-}
+} */
 
 .form-input-group {
 	display: flex;
@@ -461,11 +473,11 @@ section {
 	margin-bottom: 25px;
 }
 
-.form-checkbox-group {
+/* .form-checkbox-group {
 	display: flex;
 	flex-direction: row;
 	align-items: center
-}
+} */
 
 /* footer */
 
