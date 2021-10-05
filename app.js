@@ -10,7 +10,6 @@ const app = Vue.createApp({
 			cartEmpty: true,
 			cart: [],
 			showMain: true,
-			// showCart: false,
 			showShipping: false
 		}
 	},

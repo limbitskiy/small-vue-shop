@@ -40,5 +40,8 @@ app.component('navbar', {
                 popup.dataset.open = 'false'
             }
         }
+    },
+    created() {
+        console.log('navbar created')
     }
 })

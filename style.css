@@ -37,7 +37,7 @@ button {
 	color: #FFF;
 	margin: 20px 0 10px;
 	cursor: pointer;
-	z-index: 10;
+	z-index: 3;
 }
 
 button:hover {
@@ -98,7 +98,7 @@ section {
 	right: -355px;
 	top: 100px;
 	max-width: 335px;
-	z-index: 10;
+	z-index: 11;
 	background-color: var(--grey-navbar);
 	list-style: none;
 	padding: 10px;
@@ -148,8 +148,6 @@ section {
 }
 
 .cart-item-details {
-	/* display: flex;
-	flex-wrap: wrap; */
 	height: 80px;
 }
 
@@ -214,7 +212,6 @@ section {
 	display: flex;
 	align-content: center;
 	flex-wrap: wrap;
-	/* color: #FFF; */
 	font-weight: 700;
 	font-size: 20px;
 }
@@ -248,21 +245,26 @@ section {
 
 .jumbotron {
 	width: 100%;
-	background-image: url('/images/jumbotron.jpg');
 	background-size: cover;
 	position: relative;
-	/* z-index: -1; */
 }
 
 .jumbotron-inner {
 	position: relative;
 	height: 600px;
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 80px;
+}
+
+.jumbotron-inner img {
+	margin-right: 8em;
 }
 
 .jumbotron .cta {
 	position: absolute;
 	top: 40%;
-	/* text-shadow: 3px 3px 4px rgba(0,0,0, .5); */
+	left: 0;
 }
 
 .jumbotron span {
@@ -299,9 +301,8 @@ section {
 	border: 1px solid rgb(187, 187, 187);
 	border-radius: 5px;
 	text-align: center;
-	/* margin: 35px 60px; */
 	padding: 35px;
-	box-shadow: 3px 3px 10px rgba(0,0,0, .3);
+	box-shadow: rgb(0 0 0 / 25%) 2px 2px 6px;
 }
 
 .why-us-item>img {
@@ -470,7 +471,6 @@ section {
 
 footer {
 	display: flex;
-	/* margin-top: 50px; */
 	background-color: var(--grey-bg);
 }
 
@@ -490,7 +490,6 @@ footer {
 
 .footer-links {
 	list-style: none;
-	/* margin: 70px 0; */
 }
 
 .footer-inner p,

@@ -1,0 +1,12 @@
+remotePath="/home/jk/ftpServer/d4.himpost.com/"
+thisFileName="toServer"
+
+echo removing old remote files...
+rm -r $remotePath/*
+
+echo copying new files...
+cp -r * $remotePath
+
+rm $remotePath/$thisFileName
+echo copying COMPLETE
+
