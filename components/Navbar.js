@@ -15,7 +15,7 @@ app.component('navbar', {
 							<div v-if="this.cart.length !== 0" class="full-cart-circle"></div>
 						</button>
 
-						<button @click="this.$emit('to-main')">
+						<button @click="this.$emit('change-view', 'main-component')">
 							<i class="fas fa-home"></i>
 						</button>
 

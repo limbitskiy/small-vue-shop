@@ -22,7 +22,7 @@ app.component('popup-cart', {
 			</div>
 		</li>
         <p class="total" v-if="this.cart.length > 0">К оплате: <span>{{ this.total }}</span> грн</p>
-        <button v-if="this.cart.length > 0" @click="this.$emit('to-shipping')">Заказать</button>
+        <button v-if="this.cart.length > 0" @click="this.$emit('change-view', 'shipping')">Заказать</button>
 	</ul>
     `,
     props: {

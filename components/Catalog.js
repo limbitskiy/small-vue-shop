@@ -1,4 +1,4 @@
-app.component('products', {
+app.component('catalog', {
     template:
         /*html*/
         `
@@ -29,12 +29,17 @@ app.component('products', {
     },
     props: {
         products: {
-            type: Object,
+            type: Array,
+            required: true
+        },
+        cart: {
+            type: Array,
             required: true
         }
     },
     methods: {
         addToCart(product) {
+            // console.log(product)
             this.$emit('add-to-cart', product)
         }
     }

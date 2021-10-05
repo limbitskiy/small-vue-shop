@@ -20,24 +20,18 @@
 
 	<div id="app">
 
-		<popup-cart :cart="cart" @to-shipping="toShipping"></popup-cart>
+		<popup-cart :cart="cart" @change-view="changeView"></popup-cart>
 
-		<navbar :cart="cart" @to-main="toMain"></navbar>
+		<navbar :cart="cart" @change-view="changeView"></navbar>
 
-		<shipping v-if="showShipping"></shipping>
+		<!-- <shipping v-if="showShipping"></shipping> -->
 
-		<main v-if="showMain" class="main-content">
+		<!-- <main-component></main-component> -->
 
-			<jumbotron></jumbotron>
-
-			<products class="grey-bg" :products="products" @add-to-cart="updateCart">
-			</products>
-
-			<about></about>
-
-			<why-us></why-us>
-
-		</main>
+		<transition name="component-fade" mode="out-in">
+			<component :is="currentComponentShown" :products="products" :cart="cart" @add-to-cart="updateCart">
+			</component>
+		</transition>
 
 		<footer-component></footer-component>
 
@@ -54,7 +48,8 @@
 	<script src="app.js"></script>
 	<script src="/components/Navbar.js"></script>
 	<script src="/components/Jumbotron.js"></script>
-	<script src="/components/Products.js"></script>
+	<script src="/components/MainComponent.js"></script>
+	<script src="/components/Catalog.js"></script>
 	<script src="/components/About.js"></script>
 	<script src="/components/WhyUs.js"></script>
 	<script src="/components/Footer.js"></script>
