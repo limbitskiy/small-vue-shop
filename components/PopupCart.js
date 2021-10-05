@@ -1,9 +1,14 @@
 app.component('popup-cart', {
+    data() {
+        return {
+            popupVisible: false
+        }
+    },
     template:
         /*html*/
         `
     <ul class="popup-cart" data-open="false">
-		<p v-if="this.cart.length === 0">Корзина пуста</p>
+		<p v-if="this.cart.length === 0" class="empty-cart-message">Корзина пуста</p>
 		<li v-for="(product, index) in this.cart" :key="index">
 			<div class="popup-item-section">
 				<img :src="product.image" alt="">
@@ -37,6 +42,9 @@ app.component('popup-cart', {
         }
     },
     computed: {
+        // popupIsVisible() {
+        //     return this.popupVisible
+        // },
         total() {
             return this.cart.reduce((sum, item) => {
                 return sum += item.price * item.quantity

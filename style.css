@@ -13,6 +13,10 @@
 	--red-color-lighten:#ff4141;
 	--red-color-darken:rgb(149, 55, 26);
 
+	--orange-btn-darken: rgb(124, 89, 25);
+	--orange-btn: rgb(231, 162, 33);
+	--orange-btn-lighten: rgb(255, 187, 61);
+
 	--grey-bg: #e0e0e0;
 	--grey-bg-lighten: #ececec;
 	--grey-bg-darken: #909090;
@@ -33,6 +37,8 @@ body {
 	font-size: 16px;
 }
 
+/* buttons */
+
 button {
 	padding: .8em 2.5em;
 	background-color: var(--green-color);
@@ -50,7 +56,6 @@ button:hover {
 
 button:active {
 	background-color: var(--green-color-darken);
-	box-shadow:none
 }
 
 a {
@@ -170,10 +175,15 @@ section {
     font-weight: 600;
 }
 
+.popup-cart .empty-cart-message {
+	padding: 1em 3em;
+}
+
 .popup-item-section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 .cart-item-details {
@@ -182,6 +192,10 @@ section {
 
 .popup-cart img {
 	height: 60px;
+}
+
+.popup-slide-out {
+	right: 1em;
 }
 
 /* cart button */
@@ -546,6 +560,20 @@ footer {
 	flex-wrap: wrap;
 	background-color: var(--accent-color);
 	color: #FFF;
+}
+
+/* overriding styles */
+
+button.btn-orange {
+	background-color: var(--orange-btn);
+}
+
+button.btn-orange:hover {
+	background-color: var(--orange-btn-lighten);
+}
+
+button.btn-orange:active {
+	background-color: var(--orange-btn-darken);
 }
 
 /* media */

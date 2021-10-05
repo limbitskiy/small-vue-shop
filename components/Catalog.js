@@ -39,7 +39,6 @@ app.component('catalog', {
     },
     methods: {
         addToCart(product) {
-            // console.log(product)
             this.$emit('add-to-cart', product)
         }
     }

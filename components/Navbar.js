@@ -1,4 +1,9 @@
 app.component('navbar', {
+    data() {
+        return {
+            popup: document.querySelector('.popup-cart')
+        }
+    },
     template:
         /*html*/
         `
@@ -10,9 +15,8 @@ app.component('navbar', {
 
                         <i class="fa fa-mobile" aria-hidden="true"><span>+38 (050) 47-55-213</span></i>
 
-						<button @click="openCartPopup($event)">
+						<button @click="openCartPopup($event)" :class="{'btn-orange': this.cart.length > 0}">
 							<i class="fas fa-shopping-cart"></i>
-							<div v-if="this.cart.length !== 0" class="full-cart-circle"></div>
 						</button>
 
 						<button @click="this.$emit('change-view', 'main-component')">
@@ -31,14 +35,19 @@ app.component('navbar', {
     },
     methods: {
         openCartPopup() {
-            let popup = document.querySelector('.popup-cart')
-            if (popup.dataset.open == 'false') {
-                popup.style.right = '1em'
-                popup.dataset.open = 'true'
+            if (this.popup.dataset.open === 'false') {
+                this.showPopup()
             } else {
-                popup.style.right = '-360px'
-                popup.dataset.open = 'false'
+                this.hidePopup()
             }
+        },
+        showPopup() {
+            this.popup.style.right = '1em'
+            this.popup.dataset.open = 'true'
+        },
+        hidePopup() {
+            this.popup.style.right = '-360px'
+            this.popup.dataset.open = 'false'
         }
     },
     created() {

@@ -24,10 +24,6 @@
 
 		<navbar :cart="cart" @change-view="changeView"></navbar>
 
-		<!-- <shipping v-if="showShipping"></shipping> -->
-
-		<!-- <main-component></main-component> -->
-
 		<transition name="component-fade" mode="out-in">
 			<component :is="currentComponentShown" :products="products" :cart="cart" @add-to-cart="updateCart">
 			</component>
